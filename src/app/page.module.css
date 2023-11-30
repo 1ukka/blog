@@ -35,6 +35,7 @@
   margin-top: -60px;
   position: relative;
   margin-bottom: 60px;
+  padding: 0 20px;
 }
 
 .home{
@@ -44,7 +45,7 @@
 }
 
 .loadcon{
-  height: 400px;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,3 +82,53 @@
   }
 } 
 
+@media screen and (max-width: 768px){
+  .grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px){
+  .grid{
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: -20px;
+  }
+  .home .cover .overlay .title{
+  
+  padding: 0 10px;
+  }
+  .home .cover .overlay .title h1{
+    font-size: 40px;
+  }
+  .home .cover .overlay .title p{
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-height: 980px){
+  .grid{
+    margin-top: -20px;
+  }
+  .home .cover .overlay .title{
+    margin-top: 70px;
+    padding: 0 10px;
+    }
+    .home .cover .overlay .title h1{
+      font-size: 40px;
+    }
+    .home .cover .overlay .title p{
+      font-size: 24px;
+    }
+}
+@media screen and (max-height: 1100px){
+  .home .cover .overlay title{
+    margin-top: 70px;
+    padding: 0 10px;
+    }
+    .home .cover .overlay .title h1{
+      font-size: 40px;
+    }
+    .home .cover .overlay .title p{
+      font-size: 24px;
+    }
+}

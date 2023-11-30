@@ -19,9 +19,16 @@
 
 .footer{
     background-color: #eee;
-    padding: 20px 0px;
+    padding: 20px 10px;
 }
 
 .footer a:hover{
     color: #0000FF;
+}
+
+@media (max-width: 768px){
+    .footer h2{
+        font-size: 20px;
+    }
+    
 }

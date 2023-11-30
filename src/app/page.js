@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { Container } from "@/componets/container/container";
 import styles from "./page.module.css";
 import { Header } from "@/componets/header/header";
@@ -7,24 +7,22 @@ import { Footer } from "@/componets/footer/footer";
 import { useState, useEffect } from "react";
 
 export default function Home() {
-
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const getlist = async () => {
     setLoading(true);
-    fetch("https://api.slingacademy.com/v1/sample-data/blog-posts")
+    fetch("https://api.slingacademy.com/v1/sample-data/blog-posts?offset=0&limit=9")
       .then((response) => response.json())
       .then((data) => {
         setList(data.blogs);
         setLoading(false);
       });
-  }
+  };
 
   useEffect(() => {
     getlist();
-  }
-  , []);
+  }, []);
   return (
     <main className={styles.home}>
       <Header />
@@ -39,11 +37,15 @@ export default function Home() {
         </div>
       </div>
       <Container>
-      {loading && <div className={styles.loadcon}><span className={styles.loader}>L &nbsp; ading</span></div>}
+        {loading && (
+          <div className={styles.loadcon}>
+            <span className={styles.loader}>L &nbsp; ading</span>
+          </div>
+        )}
         <div className={styles.grid}>
-        {list.map((el, i) => (
-          <Card key={i} blog={el}/>
-        ))}
+          {list.map((el, i) => (
+            <Card key={i} blog={el} />
+          ))}
         </div>
       </Container>
       <Footer />
